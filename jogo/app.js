@@ -12,6 +12,8 @@ var botaoLancarDado = document.querySelector("#botao-lancar-dado");
 var botaoPassarVez = document.querySelector('#botao-passar-vez');
 //botao novo jogo
 var botaoNovoJogo = document.querySelector('#botao-novo-jogo');
+//botao novo jogo
+var botaoNovoJogoModal = document.querySelector('#botao-novo-jogo-modal');
 //rodada 0
 var pontuacaoRodada0 = document.querySelector('#pontuacao-rodada-0');
 //rodada 1
@@ -41,6 +43,19 @@ botaoNovoJogo.addEventListener("click", function () {
     pontuacoesGlobais[jogadorAtual].textContent = pontuacao[jogadorAtual];
 })
 
+
+botaoNovoJogoModal.addEventListener("click", function () {
+    pontuacao[jogadorAtual] = 0;
+    pontuacoesRodadas[jogadorAtual].textContent = pontuacao[jogadorAtual];
+    pontuacoesGlobais[jogadorAtual].textContent = pontuacao[jogadorAtual];
+
+    jogadorAtual = 1 - jogadorAtual;
+
+    pontuacao[jogadorAtual] = 0;
+    pontuacoesRodadas[jogadorAtual].textContent = pontuacao[jogadorAtual];
+    pontuacoesGlobais[jogadorAtual].textContent = pontuacao[jogadorAtual];
+})
+
 botaoLancarDado.addEventListener("click", function () {
     var dado = Math.floor(Math.random() * 6) + 1;
     if (dado == 1) {
@@ -53,5 +68,16 @@ botaoLancarDado.addEventListener("click", function () {
         pontuacao[jogadorAtual] += dado;
         pontuacoesGlobais[jogadorAtual].textContent = pontuacao[jogadorAtual];
         pontuacoesRodadas[jogadorAtual].textContent = dado;
+        terminar();
     }
 })
+
+function terminar() {
+
+    if (pontuacao[jogadorAtual] >= 20) {
+
+        $('#myModal').modal('show');
+    }
+}
+
+//$('button').click(function () {});
