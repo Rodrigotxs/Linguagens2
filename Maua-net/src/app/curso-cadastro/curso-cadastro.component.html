@@ -1,0 +1,19 @@
+<div class="row mt-5">
+    <div class="col-md-6 mt-5 form-group">
+      <label for="nomeInput">Nome do Curso</label>
+      <input type="text" class="form-control" id="nomeInput" #nomeInput />
+    </div>
+    <div class="col-md-6 mt-5 form-group">
+      <label for="descricao">Descrição</label>
+      <input type="text" class="form-control" id="nomeInput" #descricaoInput />
+    </div>
+  </div>
+  <div class="row">
+    <button
+      class="btn btn-primary btn-block"
+      (click)="adicionar(nomeInput.value, descricaoInput.value)"
+      type="button"
+    >
+      Cadastrar
+    </button>
+  </div>
