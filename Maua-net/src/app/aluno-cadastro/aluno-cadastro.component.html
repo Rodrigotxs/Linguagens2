@@ -1,0 +1,64 @@
+<nav aria-label="breadcrumb" class="container" class="padding">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="main.html">Início</a></li>
+        <li class="breadcrumb-item active">Cadastre-se</li>
+    </ol>
+</nav>
+
+<div class="container">
+    <form #pessoaForm="ngForm" (ngSubmit)="salvar(pessoaForm)">
+        <div class="row mt-5">
+            <div class="form-group col-12">
+                <label for="nomeInput">Nome</label>
+                <input type="text" placeholder="nome" class="form-control p-4" name="nome" ngModel #nomeInput>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="form-group col-12">
+                <label for="idadeInput">Idade</label>
+                <input type="text" placeholder="idade" class="form-control p-4" name="idade" ngModel #idadeInput>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="form-group col-12">
+                <label for="emailInput">Email</label>
+                <input type="text" placeholder="email" class="form-control p-4" name="email" ngModel #emailInput>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="form-group col-12">
+                <label for="opcaoInput">Curso</label>
+                <select name="" id="opcaoInput" class="form-control" name="opcao" ngModel #opcaoInput>
+                    <option value="">Selecione</option>
+                    <option *ngFor="let p of opcoes">{{p}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button class="btn btn-primary btn-block" (click)="onAdicionarAluno(nomeInput.value)" type="button">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="row mt-5">
+
+        <div class="card col-12">
+            <div class="card">
+                <div class="card-header">
+                    Alunos Cadastrados
+                </div>
+                <div class="card-body">
+                    <div class="form-group row" *ngFor="let aluno of alunos">
+                        <div class="col-12">
+                            {{aluno.nome}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

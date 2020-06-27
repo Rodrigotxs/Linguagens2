@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'maua-angular';
+  estiloBotao(){
+    return{
+      backgroundColor: "#363636",
+      padding: '3px',
+      width: '10%',
+      border: 'none'
+    }
+  }
+  obterClassesRodape() {
+    return ['rodape']
+  }
+  
 }

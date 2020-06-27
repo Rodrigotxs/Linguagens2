@@ -8,6 +8,8 @@ import { CursosComponent } from './cursos/cursos.component';
 import { SugestoesComponent } from './sugestoes/sugestoes.component';
 import { CursoCartaoComponent } from './curso-cartao/curso-cartao.component';
 import { CursoCadastroComponent } from './curso-cadastro/curso-cadastro.component';
+import { AlunoCadastroComponent } from './aluno-cadastro/aluno-cadastro.component';
+import { FormsModule }  from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,8 +19,9 @@ import { CursoCadastroComponent } from './curso-cadastro/curso-cadastro.componen
     SugestoesComponent,
     CursoCartaoComponent,
     CursoCadastroComponent,
+    AlunoCadastroComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
